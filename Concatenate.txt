@@ -1,0 +1,25 @@
+package concatenate;
+import static org.junit.Assert.assertTrue;
+import java.util.Scanner;
+public class twostrings {
+    public static void main(String[] args) {
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.print("Enter the first string: ");
+            String str1 = s.nextLine();
+            System.out.print("Enter the second string: ");
+            String str2 = s.nextLine();
+            // Concatenate strings
+            String result = str1 + str2;
+            System.out.println("Concatenated String = " + result);
+
+            // Example assertion: if inputs are "Hello" and "World", result should be "HelloWorld"
+            if (str1.equals("Hello") && str2.equals("World")) {
+                assertTrue("Concatenation should be 'HelloWorld'", result.equals("HelloWorld"));
+                System.out.println("✅ Test Passed — Concatenated String = HelloWorld");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        }
+    }
+}

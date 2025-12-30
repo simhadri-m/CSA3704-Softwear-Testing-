@@ -1,0 +1,19 @@
+package simple;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.Scanner;
+
+class simple {
+	public static void main(String[] args)
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.print("Enter Principle: Time: Rate: ");
+	double P=sc.nextDouble();
+	double T=sc.nextDouble();
+	double R=sc.nextDouble();
+	double SI=P*T*R/100;
+	System.out.println("SI is: "+SI);
+	assertTrue(110==SI);
+}
+}

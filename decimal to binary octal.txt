@@ -1,0 +1,28 @@
+package decimaltobinary;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Scanner;
+
+public class decimaltobinary1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter a decimal number: ");
+        int decimal = in.nextInt();
+
+        // Convert decimal to binary
+        String binary = Integer.toBinaryString(decimal);
+        System.out.println("BINARY IS: " + binary);
+
+        // Convert decimal to octal
+        System.out.println("OCTAL IS: " + Integer.toOctalString(decimal));
+
+        // Example assertion: if input is 12, binary should be "1100"
+        if (decimal == 12) {
+            assertEquals("Binary of 12 should be 1100", "1100", binary);
+        }
+
+        in.close();
+    }
+}

@@ -1,0 +1,27 @@
+package vote;
+
+import static org.junit.Assert.assertTrue;
+import java.util.Scanner;
+
+public class vote1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Please enter your age: ");
+        int age = scan.nextInt();
+
+        if (age >= 18) {
+            System.out.println("Welcome to the voting system. You can vote.");
+        } else {
+            int yearsLeft = 18 - age;
+            System.out.println("Sorry, you can vote after " + yearsLeft + " years.");
+
+            // Assertion for test case: if age is 16, yearsLeft should be 2
+            if (age == 16) {
+                assertTrue("Expected 2 years left for age 16", yearsLeft == 2);
+            }
+        }
+
+        scan.close();
+    }
+}

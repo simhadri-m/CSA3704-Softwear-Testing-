@@ -1,0 +1,29 @@
+package comparetwostrings;
+
+import static org.junit.Assert.assertEquals;
+import java.util.Scanner;
+
+public class comparetwostrings1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter the user name: ");
+        String str1 = in.nextLine();
+
+        System.out.print("Reenter the user name: ");
+        String str2 = in.nextLine();
+
+        if (str1.equals(str2)) {
+            System.out.println("Usernames match.");
+        } else {
+            System.out.println("Usernames do not match.");
+        }
+
+        // Assertion for test case: if both inputs are "admin"
+        if (str1.equals("admin") && str2.equals("admin")) {
+            assertEquals("Expected both usernames to be 'admin'", str1, str2);
+        }
+
+        in.close();
+    }
+}

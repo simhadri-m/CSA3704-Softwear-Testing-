@@ -1,0 +1,23 @@
+package lengthofstring;
+
+import static org.junit.Assert.assertTrue;
+import java.util.Scanner;
+
+public class lengthofstring1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Please enter a string: ");
+        String input = scan.nextLine();
+
+        int length = input.length();
+        System.out.println("The length of the string is: " + length);
+
+        // Assertion for test case: if input is "hello", length should be 5
+        if (input.equals("hello")) {
+            assertTrue("Expected length of 'hello' to be 5", length == 5);
+        }
+
+        scan.close();
+    }
+}

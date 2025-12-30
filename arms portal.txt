@@ -1,0 +1,29 @@
+package armsportal;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class armslogin {
+
+    public static void main(String[] args) {
+
+        // No need for System.setProperty in Selenium 4.6+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+        driver.get("https://arms.sse.saveetha.com/");
+
+        WebElement username = driver.findElement(By.id("txtusername"));
+        WebElement password = driver.findElement(By.id("txtpassword"));
+        WebElement login = driver.findElement(By.name("btnlogin"));
+
+        username.sendKeys("192210149");
+        password.sendKeys("harini2004");
+
+        login.click();
+
+        System.out.println("Page after login: " + driver.getTitle());
+    }
+}

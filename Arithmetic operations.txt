@@ -1,0 +1,36 @@
+package atithmetic;
+
+import static org.junit.Assert.assertTrue;
+import java.util.Scanner;
+
+public class arithmetic1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = scan.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = scan.nextInt();
+
+        int sum = a + b;
+        int diff = a - b;
+        int product = a * b;
+        double quotient = (b != 0) ? (double) a / b : Double.NaN;
+
+        System.out.println("Addition = " + sum);
+        System.out.println("Subtraction = " + diff);
+        System.out.println("Multiplication = " + product);
+        System.out.println("Division = " + quotient);
+
+        // Assertion for test case: if a = 10, b = 5
+        if (a == 10 && b == 5) {
+            assertTrue("Expected sum to be 15", sum == 15);
+            assertTrue("Expected difference to be 5", diff == 5);
+            assertTrue("Expected product to be 50", product == 50);
+            assertTrue("Expected quotient to be 2.0", quotient == 2.0);
+        }
+
+        scan.close();
+    }
+}

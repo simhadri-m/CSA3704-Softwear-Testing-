@@ -1,0 +1,30 @@
+package reversecode;
+
+import static org.junit.Assert.assertEquals;
+import java.util.Scanner;
+
+public class reverseword1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        System.out.println("Reverse of the string '" + str + "' is:");
+
+        StringBuilder reversed = new StringBuilder();
+
+        for (int j = str.length(); j > 0; --j) {
+            reversed.append(str.charAt(j - 1));
+        }
+
+        System.out.println(reversed);
+
+        // Assertion for test case: if input is "mani", reversed should be "inam"
+        if (str.equals("mani")) {
+            assertEquals("Expected reverse of 'mani' to be 'inam'", "inam", reversed.toString());
+        }
+
+        sc.close();
+    }
+}
